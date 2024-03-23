@@ -10,6 +10,12 @@ services:
     networks:
       - wuret
     restart: always
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5673:5672
+      - 15673:15672
 
 volumes:
   realtime-bus-data: null

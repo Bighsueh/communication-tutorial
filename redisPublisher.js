@@ -23,6 +23,9 @@ const task = {
 
 async function doSomething(req, res) {
   await redisClient.publish('do', JSON.stringify(task));
+  res.json({
+    status: 'ok'
+  })
 }
 
 app.get("/do", doSomething);
